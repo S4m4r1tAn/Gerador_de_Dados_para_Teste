@@ -1,5 +1,6 @@
 import random
 from time import sleep
+import PySimpleGUI as sg
 
 nomes = ['Emerson', 'Keli', 'Thomas', 'Nicholas', 'Christopher']
 email = ['emerson@email.com', 'keli@email.com', 'thomas@email.com', 'nicholas@email.com', 'christopher@email.com']
@@ -7,10 +8,40 @@ telefone = [1143527995, 5199963652, 447909138487, 1143526669, 3499965889]
 cidade = ['Sao Bernado do Campo', 'Niteroi', 'Caratinga', 'Porto Alegre', 'Brumado']
 estado = ['SP', 'RJ', 'MG', 'RS', 'BA']
 
-print('\n\nBem-vindo ao Gerador de Dados para Testes - Para finalizar digite \033[0;30;41mFIM.\033[m\n')
-print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n')
+sg.theme('DarkAmber')
+
+layout = [
+    [sg.Text('Bem-Vindo(a) ao Gerador de Dados para Testes')],
+    [sg.Text('Escolha uma ou mais opções abaixo a serem geradas aleatoriamente!')],
+    [sg.Checkbox('Nome', key='nome'), sg.Checkbox('Email', key='email'),
+     sg.Checkbox('Telefone', key='telefone'), sg.Checkbox('Cidade', key='cidade'),
+     sg.Checkbox('Estado', key='estado')],
+    [sg.Button('Gerar Dados'), sg.Button('FIM')],
+    [sg.Output(size=(40,10))]
+]
+
+window = sg.Window('Gerador de Dados', layout)
 
 while True:
+    event, values = window.read()
+
+    if event == sg.WIN_CLOSED:
+        break
+
+    if event == 'FIM':
+        print('Programa de Teste Finalizado pelo Usuario...')
+        sg.Popup('Programa Finalizado com Sucesso!')
+        break
+
+    opcoes = []
+    for key in ['nome', 'email', 'telefone', 'cidade', 'estado']:
+        if values[key]:
+            opcoes.append(key)
+
+    if not opcoes:
+        sg.Popup('Selecione pelo menos uma opção!')
+        continue
+
     try:
         arquivo = open('gerar_dados.txt', 'a')
         gerarNome = random.choice(nomes)
@@ -18,37 +49,26 @@ while True:
         gerarTelefone = random.choice(telefone)
         gerarCidade = random.choice(cidade)
         gerarEstado = random.choice(estado)
-        print('Escolha uma ou mais opções abaixo a serem geradas aleatoriamente!')
-        escolha = input('[1] - Nome\n[2] - Email\n[3] - Telefone\n[4] - Cidade\n[5] - Estado\n[FIM] - para finalizar o programa\nDigite uma ou mais opções separadas por vírgula: ')
-        if escolha == 'FIM':
-            sleep(2)
-            print('Programa de Teste Finalizado pelo Usuario...')
-            break
 
-        opcoes = escolha.split(',')
         for opcao in opcoes:
-            if opcao == '1':
+            if opcao == 'nome':
                 print(gerarNome)
                 arquivo.write("Nome gerado: " + gerarNome + "\n")
-            elif opcao == '2':
+            elif opcao == 'email':
                 print(gerarEmail)
                 arquivo.write("Email gerado: " + gerarEmail + "\n")
-            elif opcao == '3':
+            elif opcao == 'telefone':
                 print(gerarTelefone)
                 arquivo.write("Telefone gerado: " + gerarTelefone + "\n")
-            elif opcao == '4':
+            elif opcao == 'cidade':
                 print(gerarCidade)
                 arquivo.write("Cidade gerada: " + gerarCidade + "\n")
-            elif opcao == '5':
+            elif opcao == 'estado':
                 print(gerarEstado)
                 arquivo.write("Estado gerado: " + gerarEstado + "\n")
-            elif opcao == '':
-                 print('Digite apenas uma opcao valida.')
-                 break
-            else:
-                print('Voce escolheu uma opção inválida!!!')
-        arquivo.write('Dados salvos com Sucesso!')
+        arquivo.write('Dados salvos com Sucesso!\n')
         arquivo.close()
     except:
         print('Ocorreu um erro inesperado!')
-        
+        sg.Popup('Ocorreu um erro inesperado!')
+window.close()

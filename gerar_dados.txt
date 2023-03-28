@@ -1,0 +1,17 @@
+Nome gerado: Thomas
+Email gerado: nicholas@email.com
+Estado gerado: MG
+Dados salvos com Sucesso!
+Nome gerado: Keli
+Email gerado: christopher@email.com
+Cidade gerada: Porto Alegre
+Estado gerado: SP
+Dados salvos com Sucesso!
+Nome gerado: Keli
+Email gerado: emerson@email.com
+Nome gerado: Kathy Dorsey
+Email gerado: wilsonmaria@example.com
+Nome gerado: Crystal Bates
+Email gerado: woodscorey@example.org
+Cidade gerada: West Jose
+Dados salvos com Sucesso!

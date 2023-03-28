@@ -16,8 +16,9 @@ layout = [
     [sg.Checkbox('Nome', key='nome'), sg.Checkbox('Email', key='email'),
      sg.Checkbox('Telefone', key='telefone'), sg.Checkbox('Cidade', key='cidade'),
      sg.Checkbox('Estado', key='estado')],
-    [sg.Button('Gerar Dados'), sg.Button('FIM')],
-    [sg.Output(size=(40,10))]
+    [sg.Button('Gerar Dados'), sg.Button('Limpar Tela'), sg.Button('FIM')],
+    [sg.Output(size=(40,10), key='-OUTPUT-')]
+
 ]
 
 window = sg.Window('Gerador de Dados', layout)
@@ -32,6 +33,15 @@ while True:
         print('Programa de Teste Finalizado pelo Usuario...')
         sg.Popup('Programa Finalizado com Sucesso!')
         break
+    
+    if event == 'Limpar Tela':
+        window['nome'].update(False)
+        window['email'].update(False)
+        window['telefone'].update(False)
+        window['cidade'].update(False)
+        window['estado'].update(False)
+        window['-OUTPUT-'].update('')
+        continue
 
     opcoes = []
     for key in ['nome', 'email', 'telefone', 'cidade', 'estado']:
@@ -58,8 +68,8 @@ while True:
                 print(gerarEmail)
                 arquivo.write("Email gerado: " + gerarEmail + "\n")
             elif opcao == 'telefone':
-                print(gerarTelefone)
-                arquivo.write("Telefone gerado: " + gerarTelefone + "\n")
+                print(str(gerarTelefone))
+                arquivo.write("Telefone gerado: " + str(gerarTelefone) + "\n")
             elif opcao == 'cidade':
                 print(gerarCidade)
                 arquivo.write("Cidade gerada: " + gerarCidade + "\n")

@@ -1,17 +1,10 @@
-Nome gerado: Thomas
-Email gerado: nicholas@email.com
-Estado gerado: MG
+Telefone gerado: 1143527995
 Dados salvos com Sucesso!
-Nome gerado: Keli
-Email gerado: christopher@email.com
-Cidade gerada: Porto Alegre
+Nome gerado: Emerson
+Email gerado: keli@email.com
+Telefone gerado: 447909138487
+Cidade gerada: Caratinga
 Estado gerado: SP
 Dados salvos com Sucesso!
-Nome gerado: Keli
-Email gerado: emerson@email.com
-Nome gerado: Kathy Dorsey
-Email gerado: wilsonmaria@example.com
-Nome gerado: Crystal Bates
-Email gerado: woodscorey@example.org
-Cidade gerada: West Jose
+Telefone gerado: 1143526669
 Dados salvos com Sucesso!

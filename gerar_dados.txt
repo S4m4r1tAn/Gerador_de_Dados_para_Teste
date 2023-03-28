@@ -1,10 +1,4 @@
-Telefone gerado: 1143527995
-Dados salvos com Sucesso!
 Nome gerado: Emerson
-Email gerado: keli@email.com
-Telefone gerado: 447909138487
-Cidade gerada: Caratinga
-Estado gerado: SP
-Dados salvos com Sucesso!
 Telefone gerado: 1143526669
+Estado gerado: RS
 Dados salvos com Sucesso!

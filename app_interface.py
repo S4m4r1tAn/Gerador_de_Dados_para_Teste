@@ -1,6 +1,7 @@
 import random
 from time import sleep
 import PySimpleGUI as sg
+import os
 
 nomes = ['Emerson', 'Keli', 'Thomas', 'Nicholas', 'Christopher']
 email = ['emerson@email.com', 'keli@email.com', 'thomas@email.com', 'nicholas@email.com', 'christopher@email.com']
@@ -59,6 +60,12 @@ while True:
         gerarTelefone = random.choice(telefone)
         gerarCidade = random.choice(cidade)
         gerarEstado = random.choice(estado)
+        if event == 'FIM':
+            print('Programa de Teste Finalizado pelo Usuario...')
+            sg.Popup('Programa Finalizado com Sucesso!')
+            arquivo.close()
+            os.remove('gerar_dados.txt')
+            break
 
         for opcao in opcoes:
             if opcao == 'nome':

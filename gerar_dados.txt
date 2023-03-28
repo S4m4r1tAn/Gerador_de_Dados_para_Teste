@@ -12,3 +12,18 @@ Telefone gerado: 5199963652
 Cidade gerada: Porto Alegre
 Estado gerado: MG
 Dados salvos com Sucesso!
+Nome gerado: Keli
+Email gerado: thomas@email.com
+Estado gerado: RJ
+Dados salvos com Sucesso!Nome gerado: Christopher
+Email gerado: keli@email.com
+Telefone gerado: 1143526669
+Cidade gerada: Caratinga
+Estado gerado: MG
+Dados salvos com Sucesso!
+Email gerado: thomas@email.com
+Telefone gerado: 447909138487
+Dados salvos com Sucesso!
+Cidade gerada: Caratinga
+Estado gerado: RJ
+Dados salvos com Sucesso!
